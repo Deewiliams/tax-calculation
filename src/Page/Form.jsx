@@ -19,7 +19,7 @@ export default function Form() {
     <Container>
       <Box sx={{ flexGrow: 1, marginTop: "50px" }}>
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <TextField
               fullWidth
               id="outlined-basic"
@@ -28,7 +28,7 @@ export default function Form() {
               type="text"
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <TextField
               fullWidth
               id="outlined-basic"
@@ -37,7 +37,7 @@ export default function Form() {
               type="number"
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <TextField
               fullWidth
               id="outlined-basic"
@@ -46,7 +46,7 @@ export default function Form() {
               type="number"
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <TextField
               fullWidth
               id="outlined-basic"
