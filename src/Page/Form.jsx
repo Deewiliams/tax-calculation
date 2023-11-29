@@ -49,7 +49,7 @@ export default function Form() {
             />
           </Grid>
           <Grid item xs={6}>
-            <label>Salary</label>
+            <label>Tax percentage %</label>
             <TextField
               fullWidth
               id="outlined-basic"
