@@ -41,7 +41,7 @@ export default function Form() {
             <TextField
               fullWidth
               id="outlined-basic"
-              label="Salary"
+              placeholder="Enter salary"
               variant="outlined"
               type="number"
               value={salary}
@@ -49,10 +49,11 @@ export default function Form() {
             />
           </Grid>
           <Grid item xs={12}>
+            
             <TextField
               fullWidth
               id="outlined-basic"
-              label="Tax"
+              placeholder="Enter tax"
               variant="outlined"
               type="number"
               value={tax}
@@ -63,7 +64,7 @@ export default function Form() {
             <TextField
               fullWidth
               id="outlined-basic"
-              label="Nat Salary"
+              placeholder="Enter net Salary"
               variant="outlined"
               type="number"
               value={netSalary}
