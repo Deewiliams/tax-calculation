@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
-import { Button, Container } from "@mui/material";
+import { Container } from "@mui/material";
 
 export default function Form() {
   const [salary, setSalary] = React.useState();
@@ -10,7 +10,6 @@ export default function Form() {
   const [netSalary, setNetSalary] = React.useState();
 
   const calculate = () => {
-    alert(salary);
     if (salary > 5000) {
       tax = (salary * 10) / 100;
     } else if (salary > 3000) {
@@ -24,20 +23,26 @@ export default function Form() {
     setNetSalary(netSalaryTotal);
   };
 
+  React.useEffect(() => {
+    calculate();
+  }, [salary,tax, netSalary]);
+
   return (
     <Container>
       <Box sx={{ flexGrow: 1, marginTop: "50px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
+            <label>Employee name</label>
             <TextField
               fullWidth
               id="outlined-basic"
-              label="Employee name"
+              placeholder="Employee name"
               variant="outlined"
               type="text"
             />
           </Grid>
           <Grid item xs={12}>
+            <label>Salary</label>
             <TextField
               fullWidth
               id="outlined-basic"
@@ -49,7 +54,7 @@ export default function Form() {
             />
           </Grid>
           <Grid item xs={12}>
-            
+            <label>Tax</label>
             <TextField
               fullWidth
               id="outlined-basic"
@@ -61,6 +66,7 @@ export default function Form() {
             />
           </Grid>
           <Grid item xs={12}>
+            <label>Net salary</label>
             <TextField
               fullWidth
               id="outlined-basic"
@@ -72,10 +78,6 @@ export default function Form() {
             />
           </Grid>
         </Grid>
-
-        <Button variant="contained" onClick={calculate}>
-          Contained
-        </Button>
       </Box>
     </Container>
   );
