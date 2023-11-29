@@ -30,6 +30,7 @@ export default function Form() {
   return (
     <Container>
       <Box sx={{ flexGrow: 1, marginTop: "50px" }}>
+      <h1 style={{textAlign: "center"}} >Tax Calculation</h1>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <label>Employee name</label>
@@ -61,6 +62,7 @@ export default function Form() {
               placeholder="Enter tax"
               variant="outlined"
               type="number"
+              disabled
               value={tax}
               onChange={(e) => setTax(e.target.value)}
             />
@@ -73,6 +75,7 @@ export default function Form() {
               placeholder="Enter net Salary"
               variant="outlined"
               type="number"
+              disabled
               value={netSalary}
               onChange={(e) => setNetSalary(e.target.value)}
             />
