@@ -53,7 +53,7 @@ export default function Form() {
             <TextField
               fullWidth
               id="outlined-basic"
-              placeholder="Enter salary"
+              placeholder="Enter tax percentage"
               variant="outlined"
               type="number"
               value={taxPercentage}
