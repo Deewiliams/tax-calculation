@@ -8,29 +8,23 @@ export default function Form() {
   const [salary, setSalary] = React.useState();
   let [tax, setTax] = React.useState();
   const [netSalary, setNetSalary] = React.useState();
+  const [taxPercentage, setTaxPercentage] = React.useState();
 
   const calculate = () => {
-    if (salary > 5000) {
-      tax = (salary * 10) / 100;
-    } else if (salary > 3000) {
-      tax = (salary * 5) / 100;
-    } else {
-      tax = 0;
-    }
+    tax = (salary * taxPercentage) / 100;
     setTax(tax);
-
     const netSalaryTotal = salary - tax;
     setNetSalary(netSalaryTotal);
   };
 
   React.useEffect(() => {
     calculate();
-  }, [salary,tax, netSalary]);
+  }, [taxPercentage, salary, tax, netSalary]);
 
   return (
     <Container>
       <Box sx={{ flexGrow: 1, marginTop: "50px" }}>
-      <h1 style={{textAlign: "center"}} >Tax Calculation</h1>
+        <h1 style={{ textAlign: "center" }}>Tax Calculation</h1>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <label>Employee name</label>
@@ -42,7 +36,7 @@ export default function Form() {
               type="text"
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <label>Salary</label>
             <TextField
               fullWidth
@@ -52,6 +46,18 @@ export default function Form() {
               type="number"
               value={salary}
               onChange={(e) => setSalary(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <label>Salary</label>
+            <TextField
+              fullWidth
+              id="outlined-basic"
+              placeholder="Enter salary"
+              variant="outlined"
+              type="number"
+              value={taxPercentage}
+              onChange={(e) => setTaxPercentage(e.target.value)}
             />
           </Grid>
           <Grid item xs={12}>
